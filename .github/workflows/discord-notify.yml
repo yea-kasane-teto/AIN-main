@@ -55,10 +55,10 @@ jobs:
                       message = commit.get("message", "").splitlines()[0][:140]
                       link = commit.get("url", "")
                       author = commit.get("author", {}).get("username") or commit.get("author", {}).get("name") or actor
-                      lines.append(f"[\\u0060{sha}\\u0060]({link}) {message} — {author}")
+                      lines.append(f"[`{sha}`]({link}) {message} — {author}")
                   if count > 8:
                       lines.append(f"…and {count - 8} more commits")
-                  description = "\\n".join(lines)
+                  description = "\n".join(lines)
               else:
                   description = "Branch updated."
               target_url = event.get("compare") or repo.get("html_url")
