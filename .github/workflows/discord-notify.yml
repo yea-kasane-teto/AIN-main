@@ -15,7 +15,6 @@ jobs:
       - name: Send Discord notification
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          EVENT_PATH: ${{ github.event_path }}
           EVENT_NAME: ${{ github.event_name }}
         run: |
           python3 - <<'PY'
@@ -33,7 +32,7 @@ jobs:
           if url.endswith("/github"):
               url = url[:-7]
 
-          with open(os.environ["EVENT_PATH"], encoding="utf-8") as file:
+          with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as file:
               event = json.load(file)
 
           repo = event.get("repository", {})
