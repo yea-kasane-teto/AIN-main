@@ -1,0 +1,96 @@
+name: Discord notifications (miku)
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          EVENT_PATH: ${{ github.event_path }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+          if not url:
+              print("DISCORD_WEBHOOK_URL is not configured. Skipping notification.")
+              raise SystemExit(0)
+          if not url.startswith(("https://discord.com/api/webhooks/", "https://discordapp.com/api/webhooks/")):
+              raise SystemExit("Invalid Discord webhook URL.")
+          url = url.rstrip("/")
+          if url.endswith("/github"):
+              url = url[:-7]
+
+          with open(os.environ["EVENT_PATH"], encoding="utf-8") as file:
+              event = json.load(file)
+
+          repo = event.get("repository", {})
+          repo_name = repo.get("full_name", "Repository")
+          actor = event.get("sender", {}).get("login", "unknown")
+          event_name = os.environ["EVENT_NAME"]
+
+          if event_name == "push":
+              branch = event.get("ref", "").removeprefix("refs/heads/")
+              commits = event.get("commits", [])
+              if event.get("deleted"):
+                  raise SystemExit("Branch deletion event skipped.")
+              count = len(commits)
+              title = f"[{repo_name}:{branch}] {count} new commit" + ("s" if count != 1 else "")
+              if count:
+                  lines = []
+                  for commit in commits[:8]:
+                      sha = commit.get("id", "")[:7]
+                      message = commit.get("message", "").splitlines()[0][:140]
+                      link = commit.get("url", "")
+                      author = commit.get("author", {}).get("username") or commit.get("author", {}).get("name") or actor
+                      lines.append(f"[\\u0060{sha}\\u0060]({link}) {message} — {author}")
+                  if count > 8:
+                      lines.append(f"…and {count - 8} more commits")
+                  description = "\\n".join(lines)
+              else:
+                  description = "Branch updated."
+              target_url = event.get("compare") or repo.get("html_url")
+              color = 5793266
+          elif event_name == "pull_request":
+              pr = event.get("pull_request", {})
+              action = event.get("action", "updated")
+              title = f"[{repo_name}] PR #{pr.get('number', '')}: {action}"
+              description = (pr.get("title") or "Pull request updated")[:300]
+              target_url = pr.get("html_url") or repo.get("html_url")
+              actor = pr.get("user", {}).get("login", actor)
+              color = 7506394
+          else:
+              raise SystemExit("Unsupported event.")
+
+          embed = {
+              "title": title[:256],
+              "description": description[:4000],
+              "url": target_url,
+              "color": color,
+              "author": {
+                  "name": actor,
+                  "icon_url": event.get("sender", {}).get("avatar_url", ""),
+              },
+          }
+          payload = {"embeds": [embed], "allowed_mentions": {"parse": []}}
+          request = urllib.request.Request(
+              url,
+              data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+              headers={"Content-Type": "application/json", "User-Agent": "AIN-GitHub-Actions"},
+              method="POST",
+          )
+          with urllib.request.urlopen(request, timeout=20) as response:
+              print(f"Discord notification sent: HTTP {response.status}")
+          PY
