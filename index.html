@@ -32,10 +32,18 @@
             <span class="search-icon" aria-hidden="true">⌕</span>
             <input id="searchInput" type="search" placeholder="무엇을 배우고 싶나요?" aria-label="학습 단원 검색" autocomplete="off" />
             <kbd>Enter</kbd>
-            <button class="icon-button hamburger" id="menuButton" type="button" aria-label="메뉴 닫기" aria-expanded="true" aria-controls="sidebar"><span></span><span></span><span></span></button>
+            <button class="icon-button hamburger" id="menuButton" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span><span></span></button>
           </div>
           <div class="topbar-end"><span class="topbar-caption">AI를 처음 만나는 순간</span></div>
         </header>
+
+        <section class="menu-panel" id="menuPanel" aria-label="전체 메뉴" aria-hidden="true" inert>
+          <div class="menu-panel-content">
+            <div class="menu-panel-kicker">AIN MENU</div>
+            <h2>전체 메뉴</h2>
+            <p>AI 학습 목차와 관련 메뉴가 이곳에 표시됩니다.</p>
+          </div>
+        </section>
 
         <div class="page-content">
           <section class="hero" id="heroCarousel" aria-label="AI 학습 카테고리 소개" aria-roledescription="carousel">
@@ -95,6 +103,7 @@
       </main>
     </div>
     <script src="./src/modules/navigation.js"></script>
+    <script src="./src/modules/menuPanel.js"></script>
     <script src="./src/modules/heroCarousel.js"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
