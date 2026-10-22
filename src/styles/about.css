@@ -20,8 +20,8 @@
 .orbit-ring { position: absolute; inset: 11%; border: 1px solid #d8e6ff; border-radius: 50%; }
 .orbit-ring-one { transform: rotate(-25deg) scaleX(1.26); }
 .orbit-ring-two { inset: 18%; transform: rotate(30deg) scaleX(1.25); }
-.orbit-center { position: relative; z-index: 1; width: 44%; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid #edf2fb; border-radius: 50%; background: #fff; box-shadow: 0 22px 70px #7091c526; }
-.orbit-center img { width: 70%; height: 70%; object-fit: contain; }
+.orbit-center { position: relative; z-index: 1; width: 50%; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid #edf2fb; border-radius: 50%; background: #fff; box-shadow: 0 22px 70px #7091c526; }
+.orbit-center img { width: 82%; height: 82%; object-fit: contain; }
 .orbit-dot { position: absolute; z-index: 2; width: 12px; height: 12px; border: 3px solid #fff; border-radius: 50%; background: #4589ff; box-shadow: 0 0 0 3px #4589ff24; }
 .orbit-dot-one { top: 18%; left: 24%; }
 .orbit-dot-two { right: 14%; bottom: 31%; }
