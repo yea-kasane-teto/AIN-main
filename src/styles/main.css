@@ -220,36 +220,36 @@ a { color: inherit; text-decoration: none; }
   .search-wrap kbd { padding: clamp(2px, .12vw, 3px) clamp(5px, .3vw, 8px); font-size: clamp(10px, .47vw, 13px); }
   .search-wrap .hamburger { flex-basis: clamp(29px, 1.7vw, 43px); width: clamp(29px, 1.7vw, 43px); height: clamp(29px, 1.7vw, 43px); }
   .topbar-caption { font-size: clamp(10px, .47vw, 13px); }
-  .page-content { max-width: clamp(1030px, 56.8vw, 1450px); padding: clamp(24px, 1.35vw, 35px) 5.2% clamp(14px, .78vw, 20px); }
-  .hero { min-height: clamp(374px, 22vw, 560px); padding: clamp(38px, 2.2vw, 56px) clamp(44px, 2.5vw, 64px); border-radius: clamp(16px, .94vw, 24px); }
+  .page-content { max-width: clamp(1230px, 73vw, 1850px); padding: clamp(24px, 1.35vw, 35px) 5.2% clamp(14px, .78vw, 20px); }
+  .hero { width: 90%; min-height: clamp(420px, 23vw, 590px); padding: clamp(38px, 2.2vw, 56px) clamp(44px, 2.5vw, 64px); border-radius: clamp(16px, .94vw, 24px); }
   .eyebrow { gap: clamp(8px, .47vw, 12px); font-size: clamp(9px, .47vw, 12px); }
   .eyebrow-mark { width: clamp(6px, .35vw, 9px); height: clamp(6px, .35vw, 9px); }
-  .hero h1 { margin: clamp(20px, 1.18vw, 30px) 0 clamp(12px, .7vw, 18px); font-size: clamp(62px, 3.2vw, 82px); }
+  .hero h1 { margin: clamp(20px, 1.18vw, 30px) 0 clamp(12px, .7vw, 18px); font-size: clamp(70px, 3.6vw, 92px); }
   .hero-description { font-size: clamp(14px, .7vw, 18px); }
   .primary-button { gap: clamp(22px, 1.3vw, 33px); margin-top: clamp(22px, 1.3vw, 33px); padding: clamp(12px, .7vw, 18px) clamp(16px, .94vw, 24px); border-radius: clamp(8px, .47vw, 12px); font-size: clamp(11px, .59vw, 15px); }
   .hero-footnote { gap: clamp(7px, .4vw, 10px); margin-top: clamp(18px, 1.05vw, 27px); font-size: clamp(10px, .53vw, 14px); }
-  .hero-art { width: min(100%, clamp(350px, 17.7vw, 450px)); height: clamp(260px, 14vw, 358px); transform: scale(clamp(1, .048vw, 1.22)); }
-  .art-logo { top: clamp(60px, 3.5vw, 89px); width: clamp(145px, 8.5vw, 218px); height: clamp(145px, 8.5vw, 218px); }
-  .art-logo img { width: clamp(124px, 7.3vw, 186px); height: clamp(124px, 7.3vw, 186px); }
+  .hero-art { width: min(100%, clamp(380px, 19vw, 500px)); height: clamp(285px, 15.2vw, 390px); transform: scale(clamp(1, .048vw, 1.22)); }
+  .art-logo { top: clamp(65px, 3.7vw, 94px); width: clamp(165px, 9vw, 230px); height: clamp(165px, 9vw, 230px); }
+  .art-logo img { width: clamp(140px, 7.8vw, 200px); height: clamp(140px, 7.8vw, 200px); }
   .art-card { gap: clamp(5px, .3vw, 8px); padding: clamp(11px, .65vw, 16px) clamp(13px, .76vw, 19px); border-radius: clamp(9px, .53vw, 14px); }
   .art-card-label { font-size: clamp(8px, .4vw, 11px); }
   .art-equation { font-size: clamp(14px, .7vw, 18px); }
   .art-card-bottom { gap: clamp(9px, .53vw, 14px); font-size: clamp(9px, .47vw, 12px); }
-  .roadmap-section { padding-top: clamp(22px, 1.3vw, 33px); }
+  .roadmap-section { padding-top: clamp(28px, 1.5vw, 38px); }
   .section-heading { gap: clamp(20px, 1.18vw, 30px); }
-  .section-kicker { font-size: clamp(8px, .47vw, 12px); }
-  .section-heading h2 { margin: clamp(11px, .65vw, 17px) 0 clamp(3px, .18vw, 5px); font-size: clamp(23px, 1.25vw, 32px); }
-  .section-heading p { font-size: clamp(11px, .59vw, 15px); }
+  .section-kicker { font-size: clamp(9px, .5vw, 13px); }
+  .section-heading h2 { margin: clamp(12px, .7vw, 18px) 0 clamp(4px, .2vw, 6px); font-size: clamp(25px, 1.35vw, 34px); }
+  .section-heading p { font-size: clamp(13px, .65vw, 17px); }
   .roadmap-count { gap: clamp(7px, .4vw, 10px); margin-bottom: clamp(5px, .3vw, 8px); font-size: clamp(10px, .59vw, 15px); }
   .roadmap-count .count-dot { width: clamp(6px, .35vw, 9px); height: clamp(6px, .35vw, 9px); flex-basis: clamp(6px, .35vw, 9px); }
-  .unit-grid { gap: clamp(12px, .7vw, 18px) clamp(14px, .8vw, 20px); margin-top: clamp(18px, 1.05vw, 27px); }
-  .unit-card { min-height: clamp(81px, 4.7vw, 120px); grid-template-columns: clamp(52px, 3vw, 76px) minmax(0, 1fr); gap: clamp(21px, 1.2vw, 30px); padding: clamp(11px, .7vw, 18px) clamp(17px, .95vw, 24px); border-radius: clamp(12px, .7vw, 18px); }
-  .unit-icon { width: clamp(52px, 3vw, 76px); height: clamp(52px, 3vw, 76px); }
-  .unit-icon svg { width: clamp(25px, 1.5vw, 38px); height: clamp(25px, 1.5vw, 38px); }
-  .unit-number { font-size: clamp(11px, .65vw, 16px); }
-  .unit-title-wrap { gap: clamp(13px, .75vw, 19px); }
-  .unit-title-wrap h3 { font-size: clamp(15px, .9vw, 23px); }
-  .unit-description { margin-top: clamp(5px, .35vw, 9px); font-size: clamp(10px, .6vw, 15px); }
+  .unit-grid { gap: clamp(18px, .9vw, 24px); margin-top: clamp(22px, 1.2vw, 31px); }
+  .unit-card { min-height: clamp(110px, 5.5vw, 140px); grid-template-columns: clamp(60px, 3.4vw, 86px) minmax(0, 1fr); gap: clamp(24px, 1.3vw, 34px); padding: clamp(18px, 1vw, 26px); border-radius: clamp(14px, .75vw, 19px); }
+  .unit-icon { width: clamp(60px, 3.4vw, 86px); height: clamp(60px, 3.4vw, 86px); }
+  .unit-icon svg { width: clamp(29px, 1.7vw, 43px); height: clamp(29px, 1.7vw, 43px); }
+  .unit-number { font-size: clamp(13px, .7vw, 18px); }
+  .unit-title-wrap { gap: clamp(15px, .85vw, 22px); }
+  .unit-title-wrap h3 { font-size: clamp(17px, 1vw, 25px); }
+  .unit-description { margin-top: clamp(7px, .4vw, 10px); font-size: clamp(12px, .66vw, 17px); }
   .site-footer { min-height: clamp(86px, 4.9vw, 125px); flex-basis: clamp(86px, 4.9vw, 125px); gap: clamp(30px, 1.75vw, 45px); padding: clamp(13px, .76vw, 19px) 5.2%; }
   .footer-brand img { width: clamp(36px, 2.1vw, 54px); height: clamp(36px, 2.1vw, 54px); }
   .footer-contacts { gap: clamp(22px, 1.3vw, 33px); }
