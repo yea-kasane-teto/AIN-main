@@ -87,9 +87,8 @@ function initHeroCarousel() {
   const pagination = document.querySelector('#heroPagination');
   const previousButton = document.querySelector('#heroPrevious');
   const nextButton = document.querySelector('#heroNext');
-  const playbackButton = document.querySelector('#heroPlayback');
   const slideCount = document.querySelector('#heroSlideCount');
-  if (!carousel || !slidesContainer || !pagination || !previousButton || !nextButton || !playbackButton || !slideCount) return;
+  if (!carousel || !slidesContainer || !pagination || !previousButton || !nextButton || !slideCount) return;
 
   const units = [...document.querySelectorAll('#unitGrid .unit-card')].map((card) => {
     const id = card.dataset.unitId;
@@ -146,20 +145,8 @@ function initHeroCarousel() {
     timerId = window.setInterval(() => showSlide(activeIndex + 1), 7000);
   }
 
-  function updatePlaybackButton() {
-    playbackButton.textContent = isPaused ? '▶' : 'Ⅱ';
-    playbackButton.setAttribute('aria-pressed', String(isPaused));
-    playbackButton.setAttribute('aria-label', isPaused ? '자동 넘김 시작' : '자동 넘김 일시 정지');
-  }
-
   previousButton.addEventListener('click', () => showSlide(activeIndex - 1));
   nextButton.addEventListener('click', () => showSlide(activeIndex + 1));
-  playbackButton.addEventListener('click', () => {
-    isPaused = !isPaused;
-    updatePlaybackButton();
-    if (isPaused) stopAutoplay();
-    else startAutoplay();
-  });
   carousel.addEventListener('pointerenter', stopAutoplay);
   carousel.addEventListener('pointerleave', startAutoplay);
   carousel.addEventListener('focusin', stopAutoplay);
@@ -169,7 +156,6 @@ function initHeroCarousel() {
   document.addEventListener('visibilitychange', startAutoplay);
 
   showSlide(0);
-  updatePlaybackButton();
   startAutoplay();
 }
 
