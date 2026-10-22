@@ -60,7 +60,7 @@ function createSlide(unit, index, total) {
   slide.innerHTML = `
     <div class="hero-copy">
       <div class="eyebrow"><span class="eyebrow-mark"></span> AI LEARNING AREA · ${number}</div>
-      <h1 id="heroSlideTitle-${escapeHtml(unit.id)}">${name}<span> 한눈에!</span></h1>
+      <h1 id="heroSlideTitle-${escapeHtml(unit.id)}">${name}</h1>
       <p class="hero-description">${escapeHtml(details.description || unit.description)}</p>
       <a class="primary-button" href="#roadmap" aria-label="학습 로드맵에서 ${name} 영역 살펴보기">로드맵에서 살펴보기 <span aria-hidden="true">↗</span></a>
       <div class="hero-footnote"><span class="sparkle" aria-hidden="true">✳</span>${escapeHtml(details.footnote || unit.subtitle)}</div>
