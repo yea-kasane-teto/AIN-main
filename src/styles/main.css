@@ -16,7 +16,7 @@
   --sidebar-horizontal-padding: 19px;
   --sidebar-link-horizontal-padding: 12px;
   --sidebar-icon-leading-padding: calc(var(--sidebar-rail-width) / 2 - var(--sidebar-icon-size) / 2 - var(--sidebar-horizontal-padding));
-  --sidebar-collapse-inset: calc((var(--sidebar-rail-width) - var(--sidebar-link-height)) / 2 - var(--sidebar-horizontal-padding));
+  --sidebar-collapse-inset: max(0px, calc((var(--sidebar-rail-width) - var(--sidebar-link-height)) / 2 - var(--sidebar-horizontal-padding)));
   --sidebar-top-padding: 27px;
   --sidebar-logo-width: 90px;
   --sidebar-logo-height: 58px;
@@ -71,7 +71,7 @@ a { color: inherit; text-decoration: none; }
   width: var(--sidebar-link-height); min-height: var(--sidebar-link-height); justify-content: flex-start; gap: 0;
   max-width: calc(100% - var(--sidebar-collapse-inset));
   margin-left: var(--sidebar-collapse-inset);
-  padding-left: calc((var(--sidebar-link-height) - var(--sidebar-icon-size)) / 2);
+  padding-left: calc(var(--sidebar-icon-leading-padding) - var(--sidebar-collapse-inset));
 }
 .sidebar-collapsed .side-link > span:not(.side-icon) { display: none; }
 .sidebar-collapsed .side-icon { font-size: var(--sidebar-icon-size); }
