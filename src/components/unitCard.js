@@ -13,6 +13,6 @@ export function createUnitCard(unit) {
   card.dataset.unitId = unit.id;
   card.innerHTML = '<span class="unit-icon" aria-hidden="true"><svg viewBox="0 0 24 24">' + (iconMarkup[unit.icon] || '') + '</svg></span>' +
     '<div class="unit-content"><div class="unit-title-wrap"><span class="unit-number">' + unit.number + '</span><h3>' + unit.name + '</h3></div>' +
-    '<p class="unit-description">' + unit.description + '</p></div><span class="unit-arrow" aria-hidden="true">›</span>';
+    '<p class="unit-description">' + unit.description + '</p></div>';
   return card;
 }

@@ -126,7 +126,7 @@ a { color: inherit; text-decoration: none; }
 .unit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; margin-top: 18px; }
 .unit-card {
   --accent: #347ef2; --accent-soft: #eff5ff;
-  min-width: 0; min-height: 81px; display: grid; grid-template-columns: 52px minmax(0, 1fr) 12px;
+  min-width: 0; min-height: 81px; display: grid; grid-template-columns: 52px minmax(0, 1fr);
   align-items: center; gap: 21px; padding: 11px 17px; border: 1px solid #e8edf4; border-radius: 12px;
   background: #fff; transition: transform .18s, border-color .18s, box-shadow .18s;
 }
@@ -141,7 +141,7 @@ a { color: inherit; text-decoration: none; }
 .unit-subtitle { display: none; }
 .unit-description { min-height: 0; margin: 5px 0 0; color: #8491a2; font-family: 'Gowun Dodum', sans-serif; font-size: 10px; line-height: 1.5; }
 .unit-topics { display: none; }
-.unit-arrow { color: #347ef2; font-size: 22px; line-height: 1; }
+
 .empty-state { display: grid; justify-items: center; gap: 5px; padding: 58px 15px; color: #93a0b1; text-align: center; }
 .empty-state[hidden] { display: none; }
 .empty-state > span { font-size: 24px; }
@@ -178,7 +178,7 @@ a { color: inherit; text-decoration: none; }
   .section-heading h2 { font-size: 20px; }
   .section-heading p { font-size: 10px; }
   .unit-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 15px; }
-  .unit-card { grid-template-columns: 48px minmax(0, 1fr) 12px; gap: 14px; padding: 13px 14px; }
+  .unit-card { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 13px 14px; }
   .unit-icon { width: 48px; height: 48px; }
   .unit-title-wrap { gap: 10px; }
   .unit-description { font-size: 9px; }
@@ -199,4 +199,60 @@ a { color: inherit; text-decoration: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+@media (min-width: 1500px) {
+  :root { --sidebar-width: clamp(245px, 14.3vw, 366px); }
+  .sidebar { padding: clamp(27px, 1.55vw, 40px) clamp(19px, 1.1vw, 28px) clamp(20px, 1.15vw, 29px); }
+  .brand { gap: clamp(12px, .7vw, 18px); padding: 0 clamp(9px, .53vw, 14px) clamp(30px, 1.75vw, 45px); }
+  .brand img { width: clamp(48px, 2.7vw, 69px); height: clamp(48px, 2.7vw, 69px); }
+  .brand-copy strong { font-size: clamp(20px, .8vw, 27px); }
+  .brand-copy small { font-size: clamp(11px, .47vw, 14px); }
+  .sidebar-label { padding: clamp(9px, .53vw, 14px) clamp(12px, .7vw, 18px); font-size: clamp(10px, .47vw, 13px); }
+  .side-link { min-height: clamp(44px, 2.6vw, 66px); gap: clamp(12px, .7vw, 18px); margin: clamp(3px, .18vw, 5px) 0; padding: 0 clamp(12px, .7vw, 18px); font-size: clamp(13px, .59vw, 16px); }
+  .side-icon { width: clamp(18px, 1.05vw, 27px); font-size: clamp(18px, 1.05vw, 27px); }
+  .sidebar-note { gap: clamp(9px, .53vw, 14px); margin: clamp(18px, 1.05vw, 27px) clamp(5px, .3vw, 8px); padding: clamp(13px, .76vw, 19px) clamp(11px, .65vw, 16px); font-size: clamp(11px, .53vw, 14px); }
+  .sidebar-bottom { padding: clamp(16px, .94vw, 24px) clamp(12px, .7vw, 18px); font-size: clamp(11px, .53vw, 14px); }
+  .topbar { height: clamp(70px, 4.1vw, 105px); flex-basis: clamp(70px, 4.1vw, 105px); grid-template-columns: 1fr minmax(clamp(230px, 12vw, 306px), clamp(400px, 24vw, 600px)) 1fr; gap: clamp(20px, 1.15vw, 29px); }
+  .breadcrumb { gap: clamp(9px, .53vw, 14px); font-size: clamp(12px, .59vw, 15px); }
+  .search-wrap { height: clamp(38px, 2.05vw, 52px); gap: clamp(9px, .53vw, 14px); padding: 0 clamp(4px, .24vw, 6px) 0 clamp(11px, .65vw, 16px); }
+  .search-wrap input { font-size: clamp(11px, .59vw, 15px); }
+  .search-wrap kbd { padding: clamp(2px, .12vw, 3px) clamp(5px, .3vw, 8px); font-size: clamp(10px, .47vw, 13px); }
+  .search-wrap .hamburger { flex-basis: clamp(29px, 1.7vw, 43px); width: clamp(29px, 1.7vw, 43px); height: clamp(29px, 1.7vw, 43px); }
+  .topbar-caption { font-size: clamp(10px, .47vw, 13px); }
+  .page-content { max-width: clamp(1030px, 56.8vw, 1450px); padding: clamp(24px, 1.35vw, 35px) 5.2% clamp(14px, .78vw, 20px); }
+  .hero { min-height: clamp(374px, 22vw, 560px); padding: clamp(38px, 2.2vw, 56px) clamp(44px, 2.5vw, 64px); border-radius: clamp(16px, .94vw, 24px); }
+  .eyebrow { gap: clamp(8px, .47vw, 12px); font-size: clamp(9px, .47vw, 12px); }
+  .eyebrow-mark { width: clamp(6px, .35vw, 9px); height: clamp(6px, .35vw, 9px); }
+  .hero h1 { margin: clamp(20px, 1.18vw, 30px) 0 clamp(12px, .7vw, 18px); font-size: clamp(62px, 3.2vw, 82px); }
+  .hero-description { font-size: clamp(14px, .7vw, 18px); }
+  .primary-button { gap: clamp(22px, 1.3vw, 33px); margin-top: clamp(22px, 1.3vw, 33px); padding: clamp(12px, .7vw, 18px) clamp(16px, .94vw, 24px); border-radius: clamp(8px, .47vw, 12px); font-size: clamp(11px, .59vw, 15px); }
+  .hero-footnote { gap: clamp(7px, .4vw, 10px); margin-top: clamp(18px, 1.05vw, 27px); font-size: clamp(10px, .53vw, 14px); }
+  .hero-art { width: min(100%, clamp(350px, 17.7vw, 450px)); height: clamp(260px, 14vw, 358px); transform: scale(clamp(1, .048vw, 1.22)); }
+  .art-logo { top: clamp(60px, 3.5vw, 89px); width: clamp(145px, 8.5vw, 218px); height: clamp(145px, 8.5vw, 218px); }
+  .art-logo img { width: clamp(124px, 7.3vw, 186px); height: clamp(124px, 7.3vw, 186px); }
+  .art-card { gap: clamp(5px, .3vw, 8px); padding: clamp(11px, .65vw, 16px) clamp(13px, .76vw, 19px); border-radius: clamp(9px, .53vw, 14px); }
+  .art-card-label { font-size: clamp(8px, .4vw, 11px); }
+  .art-equation { font-size: clamp(14px, .7vw, 18px); }
+  .art-card-bottom { gap: clamp(9px, .53vw, 14px); font-size: clamp(9px, .47vw, 12px); }
+  .roadmap-section { padding-top: clamp(22px, 1.3vw, 33px); }
+  .section-heading { gap: clamp(20px, 1.18vw, 30px); }
+  .section-kicker { font-size: clamp(8px, .47vw, 12px); }
+  .section-heading h2 { margin: clamp(11px, .65vw, 17px) 0 clamp(3px, .18vw, 5px); font-size: clamp(23px, 1.25vw, 32px); }
+  .section-heading p { font-size: clamp(11px, .59vw, 15px); }
+  .roadmap-count { gap: clamp(7px, .4vw, 10px); margin-bottom: clamp(5px, .3vw, 8px); font-size: clamp(10px, .59vw, 15px); }
+  .roadmap-count .count-dot { width: clamp(6px, .35vw, 9px); height: clamp(6px, .35vw, 9px); flex-basis: clamp(6px, .35vw, 9px); }
+  .unit-grid { gap: clamp(12px, .7vw, 18px) clamp(14px, .8vw, 20px); margin-top: clamp(18px, 1.05vw, 27px); }
+  .unit-card { min-height: clamp(81px, 4.7vw, 120px); grid-template-columns: clamp(52px, 3vw, 76px) minmax(0, 1fr); gap: clamp(21px, 1.2vw, 30px); padding: clamp(11px, .7vw, 18px) clamp(17px, .95vw, 24px); border-radius: clamp(12px, .7vw, 18px); }
+  .unit-icon { width: clamp(52px, 3vw, 76px); height: clamp(52px, 3vw, 76px); }
+  .unit-icon svg { width: clamp(25px, 1.5vw, 38px); height: clamp(25px, 1.5vw, 38px); }
+  .unit-number { font-size: clamp(11px, .65vw, 16px); }
+  .unit-title-wrap { gap: clamp(13px, .75vw, 19px); }
+  .unit-title-wrap h3 { font-size: clamp(15px, .9vw, 23px); }
+  .unit-description { margin-top: clamp(5px, .35vw, 9px); font-size: clamp(10px, .6vw, 15px); }
+  .site-footer { min-height: clamp(86px, 4.9vw, 125px); flex-basis: clamp(86px, 4.9vw, 125px); gap: clamp(30px, 1.75vw, 45px); padding: clamp(13px, .76vw, 19px) 5.2%; }
+  .footer-brand img { width: clamp(36px, 2.1vw, 54px); height: clamp(36px, 2.1vw, 54px); }
+  .footer-contacts { gap: clamp(22px, 1.3vw, 33px); }
+  .footer-contacts a { gap: clamp(3px, .18vw, 5px); font-size: clamp(9px, .47vw, 12px); }
+  .footer-contacts strong { font-size: clamp(10px, .53vw, 14px); }
 }
