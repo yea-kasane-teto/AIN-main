@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f9fc" />
+    <meta name="description" content="AIN은 AI를 처음 만나는 사람을 위한 단계별 학습 로드맵입니다." />
+    <title>웹사이트 소개 | AIN</title>
+    <link rel="icon" type="image/png" href="./assets/ain-logo.png" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/about.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="sidebar" aria-label="학습 메뉴">
+        <a class="brand" href="./index.html" aria-label="AIN 홈">
+          <img src="./assets/ain-logo.png" alt="AIN 로고" />
+          <span class="brand-copy"><strong>AIN</strong><small>AI에 들어가다</small></span>
+        </a>
+        <div class="sidebar-label">학습 공간</div>
+        <a class="side-link" href="./index.html"><span class="side-icon">⌂</span><span>홈</span></a>
+        <a class="side-link is-active" href="./about.html" aria-current="page"><span class="side-icon">ⓘ</span><span>웹사이트 소개</span></a>
+        <button class="side-link side-toggle" id="sidebarToggle" type="button" aria-expanded="true" aria-controls="sidebar"><span class="side-icon">‹</span><span>사이드바 접기</span></button>
+        <div class="sidebar-note"><span class="note-dot"></span><span>학습 메뉴는 차근차근 채워갈게요.</span></div>
+        <div class="sidebar-bottom">처음이라도 괜찮아요.<br />AIN과 함께 시작해요.</div>
+      </aside>
+
+      <main class="main-area" id="aboutPage">
+        <header class="topbar">
+          <div class="topbar-left">
+            <div class="breadcrumb"><a href="./index.html">AIN</a><span class="crumb-divider">/</span><strong>웹사이트 소개</strong></div>
+          </div>
+          <div class="search-wrap about-search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input type="search" placeholder="학습 검색은 홈에서 이용할 수 있어요" aria-label="학습 검색은 홈에서 이용할 수 있습니다" disabled />
+            <a class="about-search-link" href="./index.html#roadmap">홈</a>
+            <button class="icon-button hamburger" id="menuButton" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span><span></span></button>
+          </div>
+          <div class="topbar-end"><span class="topbar-caption">AI를 처음 만나는 순간</span></div>
+        </header>
+
+        <section class="menu-panel" id="menuPanel" aria-label="전체 메뉴" aria-hidden="true" inert>
+          <div class="menu-panel-content">
+            <div class="menu-panel-kicker">AIN MENU</div>
+            <h2>전체 메뉴</h2>
+            <p>AI 학습 목차와 관련 메뉴가 이곳에 표시됩니다.</p>
+          </div>
+        </section>
+
+        <div class="page-content about-content">
+          <section class="about-hero" aria-labelledby="aboutTitle">
+            <div class="about-hero-copy">
+              <div class="about-kicker"><span></span> ABOUT AIN</div>
+              <h1 id="aboutTitle">AI를 처음 만나는 길,<br /><em>차근차근 함께</em> 걸어요.</h1>
+              <p>AIN은 인공지능이 낯선 사람도 기초부터 이해할 수 있도록, 배움의 순서를 정리한 AI 학습 공간입니다. 어려운 용어를 하나씩 살펴보며 나만의 속도로 시작해 보세요.</p>
+              <a class="about-primary-button" href="./index.html#roadmap">학습 로드맵 둘러보기 <span aria-hidden="true">↗</span></a>
+              <div class="about-hero-note"><span aria-hidden="true">✳</span> 처음 배우는 사람을 위한 AI 학습 공간</div>
+            </div>
+            <div class="about-orbit" aria-hidden="true">
+              <div class="orbit-ring orbit-ring-one"></div>
+              <div class="orbit-ring orbit-ring-two"></div>
+              <div class="orbit-center"><img src="./assets/ain-logo.png" alt="" /></div>
+              <span class="orbit-dot orbit-dot-one"></span>
+              <span class="orbit-dot orbit-dot-two"></span>
+              <div class="orbit-chip orbit-chip-top"><span>01</span> AI 기초</div>
+              <div class="orbit-chip orbit-chip-bottom"><span>06</span> 생성형 AI</div>
+            </div>
+          </section>
+
+          <section class="about-purpose" aria-labelledby="purposeTitle">
+            <div class="about-section-heading">
+              <div class="about-kicker"><span></span> WHY AIN</div>
+              <h2 id="purposeTitle">막막한 첫걸음을<br />작은 배움으로 나눕니다.</h2>
+            </div>
+            <p class="about-purpose-copy">AI를 배우고 싶어도 무엇부터 시작해야 할지 막막할 수 있어요. AIN은 여러 개념을 한 번에 외우기보다, 필요한 주제를 순서대로 만나고 서로 어떻게 이어지는지 알아가도록 돕습니다.</p>
+            <div class="about-value-grid">
+              <article class="about-value-card">
+                <span class="about-value-number">01</span>
+                <div class="about-value-icon" aria-hidden="true">↗</div>
+                <h3>기초부터 한 단계씩</h3>
+                <p>AI의 기본 개념에서 출발해 수학, 머신러닝, 딥러닝으로 이어지는 흐름을 따라갑니다.</p>
+              </article>
+              <article class="about-value-card">
+                <span class="about-value-number">02</span>
+                <div class="about-value-icon about-value-icon-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                <h3>원하는 주제를 찾아서</h3>
+                <p>로드맵의 영역을 살펴보고, 검색과 필터로 궁금한 학습 주제를 찾아볼 수 있습니다.</p>
+              </article>
+              <article class="about-value-card">
+                <span class="about-value-number">03</span>
+                <div class="about-value-icon" aria-hidden="true">✳</div>
+                <h3>나만의 속도로 배우기</h3>
+                <p>처음부터 차근차근 살펴보거나, 이미 알고 있는 주제에서 이어서 시작해도 좋아요.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="about-roadmap" aria-labelledby="aboutRoadmapTitle">
+            <div class="about-section-heading about-roadmap-heading">
+              <div>
+                <div class="about-kicker"><span></span> THE LEARNING PATH</div>
+                <h2 id="aboutRoadmapTitle">여섯 영역으로 만나는 AI</h2>
+                <p>기초에서 심화까지, 각 영역을 따라 AI의 핵심 개념을 살펴보세요.</p>
+              </div>
+              <a class="about-text-link" href="./index.html#roadmap">전체 로드맵 보기 <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="about-path-grid">
+              <article class="about-path-card"><span>01</span><div><h3>AI 기초</h3><p>AI·ML·DL과 데이터, 학습의 기본 개념</p></div><b aria-hidden="true">↗</b></article>
+              <article class="about-path-card"><span>02</span><div><h3>필수 수학</h3><p>벡터와 행렬, 텐서, 편미분</p></div><b aria-hidden="true">↗</b></article>
+              <article class="about-path-card"><span>03</span><div><h3>머신러닝</h3><p>데이터에서 패턴을 찾는 학습 방법</p></div><b aria-hidden="true">↗</b></article>
+              <article class="about-path-card"><span>04</span><div><h3>딥러닝</h3><p>신경망의 기본 구조와 학습 원리</p></div><b aria-hidden="true">↗</b></article>
+              <article class="about-path-card"><span>05</span><div><h3>모델</h3><p>CNN, RNN, LSTM, Attention, Transformer</p></div><b aria-hidden="true">↗</b></article>
+              <article class="about-path-card"><span>06</span><div><h3>심화</h3><p>LLM, 생성형 AI, 강화학습, 이상탐지</p></div><b aria-hidden="true">↗</b></article>
+            </div>
+          </section>
+
+          <section class="about-closing" aria-label="학습 시작하기">
+            <div><div class="about-kicker"><span></span> YOUR FIRST STEP INTO AI</div><h2>준비되었다면, 지금 시작해요.</h2><p>작은 호기심에서 출발해 AI의 원리를 하나씩 알아가 보세요.</p></div>
+            <a class="about-primary-button" href="./index.html#roadmap">AI 학습 시작하기 <span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+
+        <footer class="site-footer">
+          <a class="footer-brand" href="./index.html" aria-label="AIN 홈"><img src="./assets/ain-logo.png" alt="AIN 로고" /></a>
+          <div class="footer-contacts"><a href="mailto:sehyeongim119@gmail.com"><strong>김세현</strong><span>sehyeongim119@gmail.com</span></a><a href="mailto:s26025@gsm.hs.kr"><strong>나상효</strong><span>s26025@gsm.hs.kr</span></a></div>
+        </footer>
+      </main>
+    </div>
+    <script src="./src/modules/navigation.js"></script>
+    <script src="./src/modules/menuPanel.js"></script>
+  </body>
+</html>
