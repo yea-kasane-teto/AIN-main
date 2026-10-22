@@ -8,29 +8,28 @@
   const mobileQuery = window.matchMedia('(max-width: 740px)');
   let isOpen = !mobileQuery.matches;
 
-  const setOpen = (open, returnFocus = false) => {
+  const setOpen = (open, focusTarget = null) => {
     isOpen = open;
     shell.classList.toggle('sidebar-collapsed', !open);
-    sidebar.inert = !open;
-    sidebar.setAttribute('aria-hidden', String(!open));
     menuButton.setAttribute('aria-expanded', String(open));
     menuButton.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
     sidebarToggle.setAttribute('aria-expanded', String(open));
-    sidebarToggle.querySelector('span:last-child').textContent = open ? '사이드바 접기' : '사이드바 펼치기';
+    sidebarToggle.setAttribute('aria-label', open ? '\uC0AC\uC774\uB4DC\uBC14 \uC811\uAE30' : '\uC0AC\uC774\uB4DC\uBC14 \uD3BC\uCE58\uAE30');
+    sidebarToggle.querySelector('span:last-child').textContent = open ? '\uC0AC\uC774\uB4DC\uBC14 \uC811\uAE30' : '\uC0AC\uC774\uB4DC\uBC14 \uD3BC\uCE58\uAE30';
     sidebarToggle.querySelector('.side-icon').textContent = open ? '‹' : '›';
-    if (returnFocus) menuButton.focus();
+    if (focusTarget) focusTarget.focus();
   };
 
   setOpen(isOpen);
-  menuButton.addEventListener('click', () => setOpen(!isOpen));
-  sidebarToggle.addEventListener('click', () => setOpen(false, true));
+  menuButton.addEventListener('click', () => setOpen(!isOpen, menuButton));
+  sidebarToggle.addEventListener('click', () => setOpen(!isOpen, sidebarToggle));
   document.addEventListener('click', (event) => {
     if (mobileQuery.matches && isOpen && !sidebar.contains(event.target) && !menuButton.contains(event.target)) {
       setOpen(false);
     }
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && isOpen) setOpen(false, true);
+    if (event.key === 'Escape' && isOpen) setOpen(false, sidebarToggle);
   });
-  mobileQuery.addEventListener('change', (event) => setOpen(!event.matches, event.matches && isOpen));
+  mobileQuery.addEventListener('change', (event) => setOpen(!event.matches, event.matches && isOpen ? sidebarToggle : null));
 })();
