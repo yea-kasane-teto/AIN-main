@@ -38,21 +38,18 @@
         </header>
 
         <div class="page-content">
-          <section class="hero" aria-labelledby="heroTitle">
-            <div class="hero-copy">
-              <div class="eyebrow"><span class="eyebrow-mark"></span> YOUR FIRST STEP INTO AI</div>
-              <h1 id="heroTitle">AI에 <span>들어가<br class="hero-title-break" />다</span></h1>
-              <p class="hero-description">읽고, 직접 바꿔보고, 눈으로 확인하면서<br class="desktop-break" /> 인공지능의 원리를 하나씩 알아가요.</p>
-              <a class="primary-button" href="#roadmap">학습 여정 시작하기 <span aria-hidden="true">↗</span></a>
-              <div class="hero-footnote"><span class="sparkle">✳</span> 처음 배우는 사람을 위한 AI 학습 공간</div>
+          <section class="hero" id="heroCarousel" aria-label="AI 학습 카테고리 소개" aria-roledescription="carousel">
+            <div class="hero-stage">
+              <div class="hero-slides" id="heroSlides" aria-live="off"></div>
+              <div class="hero-side-controls">
+                <button class="hero-arrow hero-previous" id="heroPrevious" type="button" aria-label="이전 카테고리">‹</button>
+                <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="다음 카테고리">›</button>
+              </div>
             </div>
-            <div class="hero-art" aria-hidden="true">
-              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-              <div class="orbit-dot dot-one"></div><div class="orbit-dot dot-two"></div><div class="orbit-dot dot-three"></div>
-              <div class="art-card art-card-top"><span class="art-card-label">작은 질문에서 시작해요</span><span class="art-equation">y = f(x)</span></div>
-              <div class="art-logo"><img src="./assets/ain-logo.png" alt="" /></div>
-              <div class="art-card art-card-bottom"><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i></span><span>직접 만나는 AI</span></div>
-              <span class="art-star star-one">✳</span><span class="art-star star-two">✦</span>
+            <div class="hero-carousel-controls">
+              <div class="hero-pagination" id="heroPagination" role="group" aria-label="카테고리 선택"></div>
+              <span class="hero-slide-count" id="heroSlideCount" aria-hidden="true"></span>
+              <button class="hero-playback" id="heroPlayback" type="button" aria-label="자동 넘김 일시 정지" aria-pressed="false">Ⅱ</button>
             </div>
           </section>
 
@@ -99,6 +96,7 @@
       </main>
     </div>
     <script src="./src/modules/navigation.js"></script>
+    <script src="./src/modules/heroCarousel.js"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
