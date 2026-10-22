@@ -1,7 +1,6 @@
 import { filters, learningUnits } from './data/roadmap.js';
 import { renderFilters } from './components/filterBar.js';
 import { createUnitCard } from './components/unitCard.js';
-import { initNavigation } from './modules/navigation.js';
 import { initSearch } from './modules/search.js';
 
 const state = { filter: 'all', query: '' };
@@ -30,5 +29,4 @@ function updateFilter(filter) {
 
 renderFilters(filterRow, filters, state.filter, updateFilter);
 renderUnits();
-initNavigation();
 initSearch((query) => { state.query = query; renderUnits(); });
