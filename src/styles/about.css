@@ -8,7 +8,7 @@
 }
 .about-kicker { display: flex; align-items: center; gap: 10px; color: #6980a2; font-size: 10px; font-weight: 700; letter-spacing: .18em; }
 .about-kicker > span { width: 7px; height: 7px; border-radius: 50%; background: #4185ff; box-shadow: 0 0 0 4px #4185ff18; }
-.about-hero h1 { margin: 22px 0 14px; color: var(--ink); font-size: clamp(38px, 4.6vw, 66px); font-weight: 600; letter-spacing: -.065em; line-height: 1.14; }
+.about-hero h1 { margin: 22px 0 14px; color: var(--ink); font-size: clamp(36px, 4.2vw, 60px); font-weight: 600; letter-spacing: -.065em; line-height: 1.14; word-break: keep-all; }
 .about-hero h1 em { color: var(--blue); font-style: normal; }
 .about-hero-copy > p { max-width: 600px; margin: 0; color: #788aa4; font-size: clamp(14px, 1.2vw, 17px); line-height: 1.9; }
 .about-primary-button { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 28px; margin-top: 26px; padding: 0 22px; border-radius: 10px; background: var(--blue); box-shadow: 0 10px 22px #347ef229; color: #fff; font-size: 14px; font-weight: 700; transition: transform .18s ease, box-shadow .18s ease; }
@@ -65,7 +65,7 @@
 @media (min-width: 1500px) {
   .about-content { max-width: clamp(1440px, 82vw, 2080px); }
   .about-hero { min-height: clamp(430px, 26vw, 670px); border-radius: clamp(28px, 1.5vw, 40px); }
-  .about-hero h1 { font-size: clamp(66px, 4.3vw, 110px); }
+  .about-hero h1 { font-size: clamp(58px, 3.9vw, 98px); }
   .about-hero-copy > p { max-width: 760px; font-size: clamp(17px, .88vw, 23px); }
   .about-orbit { width: min(100%, clamp(410px, 28vw, 710px)); }
   .about-primary-button { min-height: clamp(54px, 3.2vw, 82px); padding: 0 clamp(22px, 1.3vw, 34px); border-radius: clamp(10px, .6vw, 15px); font-size: clamp(14px, .78vw, 20px); }
