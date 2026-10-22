@@ -32,8 +32,8 @@
           </div>
           <div class="search-wrap about-search-wrap">
             <span class="search-icon" aria-hidden="true">⌕</span>
-            <input type="search" placeholder="학습 검색은 홈에서 이용할 수 있어요" aria-label="학습 검색은 홈에서 이용할 수 있습니다" disabled />
-            <a class="about-search-link" href="./index.html#roadmap">홈</a>
+            <input id="searchInput" type="search" placeholder="무엇을 배우고 싶나요?" aria-label="학습 단원 검색" autocomplete="off" />
+            <kbd>Enter</kbd>
             <button class="icon-button hamburger" id="menuButton" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span><span></span></button>
           </div>
           <div class="topbar-end"><span class="topbar-caption">AI를 처음 만나는 순간</span></div>
@@ -128,5 +128,9 @@
     </div>
     <script src="./src/modules/navigation.js"></script>
     <script src="./src/modules/menuPanel.js"></script>
+    <script type="module">
+      import { initSearch } from './src/modules/search.js';
+      initSearch();
+    </script>
   </body>
 </html>
