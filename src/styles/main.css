@@ -12,7 +12,7 @@
   --muted: #8190a5;
   --line: #e8edf4;
   --sidebar-width: 280px;
-  --sidebar-rail-width: 80px;
+  --sidebar-rail-width: 90px;
   --sidebar-top-padding: 27px;
   --sidebar-logo-width: 90px;
   --sidebar-logo-height: 58px;
@@ -58,7 +58,6 @@ a { color: inherit; text-decoration: none; }
 .sidebar-collapsed .sidebar { width: var(--sidebar-rail-width); align-items: center; padding: var(--sidebar-top-padding) 8px 20px; }
 .sidebar-collapsed .main-area { margin-left: var(--sidebar-rail-width); }
 .sidebar-collapsed .brand { justify-content: center; gap: 0; padding: 0 0 var(--sidebar-brand-bottom-padding); }
-.sidebar-collapsed .brand img { width: min(70px, calc(var(--sidebar-rail-width) - 18px)); height: 44px; }
 .sidebar-collapsed .brand-copy,
 .sidebar-collapsed .sidebar-note,
 .sidebar-collapsed .sidebar-bottom { display: none; }
@@ -312,7 +311,7 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 1500px) {
   :root {
     --sidebar-width: clamp(280px, 17vw, 430px);
-    --sidebar-rail-width: clamp(80px, 4vw, 102px);
+    --sidebar-rail-width: clamp(90px, 4vw, 102px);
     --sidebar-top-padding: clamp(27px, 1.55vw, 40px);
     --sidebar-logo-width: clamp(90px, 3.9vw, 102px);
     --sidebar-logo-height: clamp(58px, 2.5vw, 66px);
