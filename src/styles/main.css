@@ -425,3 +425,7 @@ a { color: inherit; text-decoration: none; }
   .footer-contacts a { gap: clamp(3px, .18vw, 5px); font-size: clamp(9px, .47vw, 12px); }
   .footer-contacts strong { font-size: clamp(10px, .53vw, 14px); }
 }
+
+
+.unit-card[href] { cursor: pointer; }
+.unit-card[href]:focus-visible { outline: 3px solid #8eb5ff; outline-offset: 3px; }
