@@ -187,37 +187,13 @@ a { color: inherit; text-decoration: none; }
 .roadmap-count { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; color: #8d9aab; font-size: 10px; }
 .roadmap-count .count-dot { width: 6px; height: 6px; flex-basis: 6px; margin: 0; }
 .filter-row { display: none; }
-.unit-grid {
-  --roadmap-center-gap: 42px;
-  position: relative; display: grid; grid-template-columns: minmax(0, 1fr);
-  row-gap: 36px; margin-top: 18px;
-}
-.unit-grid::before {
-  position: absolute; z-index: 0; top: -10px; bottom: -10px; left: 50%;
-  width: 2px; background: linear-gradient(180deg, #dce9ff, #b9d3ff 50%, #dce9ff);
-  content: ''; transform: translateX(-50%);
-}
-.unit-grid:empty::before { display: none; }
+.unit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; margin-top: 18px; }
 .unit-card {
   --accent: #347ef2; --accent-soft: #eff5ff;
-  position: relative; z-index: 1; width: calc(50% - var(--roadmap-center-gap)); min-width: 0;
-  min-height: 81px; display: grid; grid-template-columns: 52px minmax(0, 1fr);
+  min-width: 0; min-height: 81px; display: grid; grid-template-columns: 52px minmax(0, 1fr);
   align-items: center; gap: 21px; padding: 11px 17px; border: 1px solid #e8edf4; border-radius: 12px;
   background: #fff; transition: transform .18s, border-color .18s, box-shadow .18s;
 }
-.unit-card:nth-child(odd) { justify-self: start; }
-.unit-card:nth-child(even) { justify-self: end; }
-.unit-card::before,
-.unit-card::after { position: absolute; top: 50%; content: ''; transform: translateY(-50%); }
-.unit-card::before {
-  z-index: 2; width: 14px; height: 14px; border: 2px solid #347ef2; border-radius: 50%;
-  background: #fff; box-shadow: 0 0 0 4px #edf4ff;
-}
-.unit-card::after { z-index: -1; width: var(--roadmap-center-gap); height: 2px; background: #c9dcff; }
-.unit-card:nth-child(odd)::before { left: calc(100% + var(--roadmap-center-gap)); transform: translate(-50%, -50%); }
-.unit-card:nth-child(odd)::after { right: calc(-1 * var(--roadmap-center-gap)); }
-.unit-card:nth-child(even)::before { right: calc(100% + var(--roadmap-center-gap)); transform: translate(50%, -50%); }
-.unit-card:nth-child(even)::after { left: calc(-1 * var(--roadmap-center-gap)); }
 .unit-card:hover { transform: translateY(-2px); border-color: #d2def0; box-shadow: 0 7px 18px #243b5c0c; }
 .unit-index { display: contents; }
 .unit-number { flex: 0 0 auto; color: #4d89ef; font: 700 11px Manrope, sans-serif; }
@@ -315,15 +291,7 @@ a { color: inherit; text-decoration: none; }
   .roadmap-section { padding-top: 29px; }
   .section-heading h2 { font-size: 20px; }
   .section-heading p { font-size: 10px; }
-  .unit-grid { --roadmap-center-gap: 20px; row-gap: 10px; margin-top: 15px; padding-left: 28px; }
-  .unit-grid::before { top: 0; bottom: 0; left: 8px; }
-  .unit-card, .unit-card:nth-child(odd), .unit-card:nth-child(even) { width: 100%; justify-self: stretch; }
-  .unit-card::before, .unit-card:nth-child(odd)::before, .unit-card:nth-child(even)::before {
-    left: -20px; right: auto; transform: translate(-50%, -50%);
-  }
-  .unit-card::after, .unit-card:nth-child(odd)::after, .unit-card:nth-child(even)::after {
-    left: -20px; right: auto; width: 20px;
-  }
+  .unit-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 15px; }
   .unit-card { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; padding: 13px 14px; }
   .unit-icon { width: 48px; height: 48px; }
   .unit-title-wrap { gap: 10px; }
@@ -411,7 +379,7 @@ a { color: inherit; text-decoration: none; }
   .section-heading p { font-size: clamp(13px, .65vw, 17px); }
   .roadmap-count { gap: clamp(7px, .4vw, 10px); margin-bottom: clamp(5px, .3vw, 8px); font-size: clamp(10px, .59vw, 15px); }
   .roadmap-count .count-dot { width: clamp(6px, .35vw, 9px); height: clamp(6px, .35vw, 9px); flex-basis: clamp(6px, .35vw, 9px); }
-  .unit-grid { --roadmap-center-gap: clamp(40px, 3vw, 72px); row-gap: clamp(34px, 2.2vw, 56px); margin-top: clamp(22px, 1.2vw, 31px); }
+  .unit-grid { gap: clamp(18px, .9vw, 24px); margin-top: clamp(22px, 1.2vw, 31px); }
   .unit-card { min-height: clamp(110px, 5.5vw, 140px); grid-template-columns: clamp(60px, 3.4vw, 86px) minmax(0, 1fr); gap: clamp(24px, 1.3vw, 34px); padding: clamp(18px, 1vw, 26px); border-radius: clamp(14px, .75vw, 19px); }
   .unit-icon { width: clamp(60px, 3.4vw, 86px); height: clamp(60px, 3.4vw, 86px); }
   .unit-icon svg { width: clamp(29px, 1.7vw, 43px); height: clamp(29px, 1.7vw, 43px); }

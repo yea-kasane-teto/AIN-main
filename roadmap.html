@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f9fc" />
+    <meta name="description" content="AI 기초부터 생성형 AI까지, AIN 학습 로드맵을 따라가 보세요." />
+    <title>AI 학습 로드맵 | AIN</title>
+    <link rel="icon" type="image/png" href="./assets/ain-logo.png" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/styles/roadmap.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="sidebar" aria-label="학습 메뉴">
+        <a class="brand" href="./index.html" aria-label="AIN 홈">
+          <img src="./assets/ain-logo.png" alt="AIN 로고" />
+          <span class="brand-copy"><strong>AIN</strong><small>AI에 들어가다</small></span>
+        </a>
+        <div class="sidebar-label">학습 공간</div>
+        <a class="side-link" href="./index.html"><span class="side-icon">⌂</span><span>홈</span></a>
+        <a class="side-link is-active" href="./roadmap.html" aria-current="page"><span class="side-icon">↗</span><span>학습 로드맵</span></a>
+        <a class="side-link" href="./about.html"><span class="side-icon">ⓘ</span><span>웹사이트 소개</span></a>
+        <button class="side-link side-toggle" id="sidebarToggle" type="button" aria-expanded="true" aria-controls="sidebar"><span class="side-icon">‹</span><span>사이드바 접기</span></button>
+        <div class="sidebar-note"><span class="note-dot"></span><span>학습 메뉴는 차근차근 채워갈게요.</span></div>
+        <div class="sidebar-bottom">처음이라도 괜찮아요.<br />AIN과 함께 시작해요.</div>
+      </aside>
+
+      <main class="main-area" id="roadmapPage">
+        <header class="topbar">
+          <div class="topbar-left">
+            <div class="breadcrumb"><a href="./index.html">AIN</a><span class="crumb-divider">/</span><strong>학습 로드맵</strong></div>
+          </div>
+          <div class="search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="무엇을 배우고 싶나요?" aria-label="학습 단원 검색" autocomplete="off" />
+            <kbd>Enter</kbd>
+            <button class="icon-button hamburger" id="menuButton" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span><span></span></button>
+          </div>
+          <div class="topbar-end"><span class="topbar-caption">AI를 처음 만나는 순간</span></div>
+        </header>
+
+        <section class="menu-panel" id="menuPanel" aria-label="전체 메뉴" aria-hidden="true" inert>
+          <div class="menu-panel-content">
+            <div class="menu-panel-kicker">AIN MENU</div>
+            <h2>AI 학습 목차</h2>
+            <p>기초부터 심화까지 여섯 학습 영역을 순서대로 살펴보세요.</p>
+            <a class="roadmap-menu-link" href="#roadmap">학습 로드맵으로 이동 <span aria-hidden="true">↘</span></a>
+          </div>
+        </section>
+
+        <div class="page-content roadmap-page-content">
+          <section class="roadmap-section" id="roadmap" aria-labelledby="roadmapTitle">
+            <div class="section-heading roadmap-page-heading">
+              <div>
+                <div class="section-kicker">LEARNING ROADMAP</div>
+                <h1 class="roadmap-page-title" id="roadmapTitle">AI 학습 로드맵</h1>
+                <p>기초부터 한 단계씩, 나만의 속도로 배워보세요.</p>
+              </div>
+              <div class="roadmap-count"><span class="count-dot"></span><span id="unitCount">6개의 학습 영역</span></div>
+            </div>
+            <div class="filter-row" id="filterRow" aria-label="학습 영역 필터"></div>
+            <div class="unit-grid" id="unitGrid" aria-live="polite"></div>
+            <div class="empty-state" id="emptyState" hidden><span aria-hidden="true">⌕</span><strong>검색 결과가 없어요</strong><p>다른 단어로 다시 찾아보세요.</p></div>
+          </section>
+        </div>
+
+        <footer class="site-footer">
+          <a class="footer-brand" href="./index.html" aria-label="AIN 홈"><img src="./assets/ain-logo.png" alt="AIN 로고" /></a>
+          <div class="footer-contacts"><a href="mailto:sehyeongim119@gmail.com"><strong>김세현</strong><span>sehyeongim119@gmail.com</span></a><a href="mailto:s26025@gsm.hs.kr"><strong>나상효</strong><span>s26025@gsm.hs.kr</span></a></div>
+        </footer>
+      </main>
+    </div>
+    <script src="./src/modules/navigation.js"></script>
+    <script src="./src/modules/menuPanel.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
