@@ -8,7 +8,11 @@ const iconMarkup = {
 };
 
 export function createUnitCard(unit) {
-  const card = document.createElement('article');
+  const card = document.createElement(unit.href ? 'a' : 'article');
+  if (unit.href) {
+    card.href = unit.href;
+    card.setAttribute('aria-label', `${unit.name} 학습 페이지 열기`);
+  }
   card.className = 'unit-card';
   card.dataset.unitId = unit.id;
   card.innerHTML = '<span class="unit-icon" aria-hidden="true"><svg viewBox="0 0 24 24">' + (iconMarkup[unit.icon] || '') + '</svg></span>' +
