@@ -11,9 +11,7 @@ export function createUnitCard(unit) {
   const card = document.createElement(unit.href ? 'a' : 'article');
   if (unit.href) {
     card.href = unit.href;
-    card.target = '_blank';
-    card.rel = 'noopener noreferrer';
-    card.setAttribute('aria-label', unit.name + ' 학습 페이지 새 창에서 열기');
+    card.setAttribute('aria-label', unit.name + ' 학습 페이지로 이동');
   }
   card.className = 'unit-card';
   card.dataset.unitId = unit.id;
