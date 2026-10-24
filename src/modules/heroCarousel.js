@@ -35,6 +35,7 @@ const topicLabels = {
 };
 
 const baseLearningUrl = 'https://yea-kasane-teto.github.io/AIN-sehyeon/?module=base';
+const mathLearningUrl = 'https://yea-kasane-teto.github.io/AIN-sanghyo/?module=math';
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => ({
@@ -64,9 +65,11 @@ function createSlide(unit, index, total) {
       <div class="eyebrow"><span class="eyebrow-mark"></span> AI LEARNING AREA · ${number}</div>
       <h1 id="heroSlideTitle-${escapeHtml(unit.id)}">${name}</h1>
       <p class="hero-description">${escapeHtml(details.description || unit.description)}</p>
-      ${unit.id === 'base'
-        ? `<a class="primary-button" href="${baseLearningUrl}" target="_blank" rel="noopener noreferrer" aria-label="새 창에서 AI 기초 학습 열기">학습 로드맵 살펴보기 <span aria-hidden="true">↗</span></a>`
-        : `<a class="primary-button" href="#roadmap" aria-label="학습 로드맵에서 ${name} 영역 살펴보기">로드맵에서 살펴보기 <span aria-hidden="true">↗</span></a>`}
+      ${unit.id === 'math'
+        ? `<a class="primary-button" href="${mathLearningUrl}" aria-label="필수 수학 학습 페이지로 이동">필수 수학 학습 시작하기 <span aria-hidden="true">↗</span></a>`
+        : unit.id === 'base'
+          ? `<a class="primary-button" href="${baseLearningUrl}" target="_blank" rel="noopener noreferrer" aria-label="새 창에서 AI 기초 학습 열기">학습 로드맵 살펴보기 <span aria-hidden="true">↗</span></a>`
+          : `<a class="primary-button" href="#roadmap" aria-label="학습 로드맵에서 ${name} 영역 살펴보기">로드맵에서 살펴보기 <span aria-hidden="true">↗</span></a>`}
       <div class="hero-footnote"><span class="sparkle" aria-hidden="true">✳</span>${escapeHtml(details.footnote || unit.subtitle)}</div>
     </div>
     <div class="hero-art" aria-hidden="true">
