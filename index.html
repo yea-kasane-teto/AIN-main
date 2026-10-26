@@ -12,15 +12,19 @@
   <body>
     <div class="app-shell" id="appShell">
       <aside class="sidebar" id="sidebar" aria-label="학습 메뉴">
-        <a class="brand" href="#home" aria-label="AIN 홈">
-          <img src="./assets/ain-logo.png" alt="AIN 로고" />
-          <span class="brand-copy"><strong>AIN</strong><small>AI에 들어가다</small></span>
-        </a>
+        <div class="sidebar-header">
+          <a class="brand" href="#home" aria-label="AIN 홈">
+            <img src="./assets/ain-logo.png" alt="AIN 로고" />
+            <span class="brand-copy"><strong>AIN</strong><small>AI에 들어가다</small></span>
+          </a>
+          <button class="sidebar-toggle-button" id="sidebarToggle" type="button" aria-expanded="true" aria-controls="sidebar" aria-label="사이드바 접기" title="사이드바 접기">
+            <span class="side-icon" aria-hidden="true">‹</span>
+          </button>
+        </div>
         <div class="sidebar-label">학습 공간</div>
         <a class="side-link is-active" href="#home" aria-current="page"><span class="side-icon">⌂</span><span>홈</span></a>
         <a class="side-link" href="./roadmap.html"><span class="side-icon">↗</span><span>학습 로드맵</span></a>
         <a class="side-link" href="./about.html"><span class="side-icon">ⓘ</span><span>웹사이트 소개</span></a>
-        <button class="side-link side-toggle" id="sidebarToggle" type="button" aria-expanded="true" aria-controls="sidebar"><span class="side-icon">‹</span><span>사이드바 접기</span></button>
         <div class="sidebar-note"><span class="note-dot"></span><span>학습 메뉴는 차근차근 채워갈게요.</span></div>
         <div class="sidebar-bottom">처음이라도 괜찮아요.<br />AIN과 함께 시작해요.</div>
       </aside>
