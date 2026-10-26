@@ -21,8 +21,9 @@
     isOpen = open;
     shell.classList.toggle('sidebar-collapsed', !open);
     sidebarToggle.setAttribute('aria-expanded', String(open));
-    sidebarToggle.setAttribute('aria-label', open ? '\uC0AC\uC774\uB4DC\uBC14 \uC811\uAE30' : '\uC0AC\uC774\uB4DC\uBC14 \uD3BC\uCE58\uAE30');
-    sidebarToggle.querySelector('span:last-child').textContent = open ? '\uC0AC\uC774\uB4DC\uBC14 \uC811\uAE30' : '\uC0AC\uC774\uB4DC\uBC14 \uD3BC\uCE58\uAE30';
+    const toggleLabel = open ? '\uC0AC\uC774\uB4DC\uBC14 \uC811\uAE30' : '\uC0AC\uC774\uB4DC\uBC14 \uD3BC\uCE58\uAE30';
+    sidebarToggle.setAttribute('aria-label', toggleLabel);
+    sidebarToggle.setAttribute('title', toggleLabel);
     sidebarToggle.querySelector('.side-icon').textContent = open ? '‹' : '›';
     if (persist) {
       try {
