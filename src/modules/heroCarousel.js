@@ -68,7 +68,7 @@ function createSlide(unit, index, total) {
       ${unit.id === 'math'
         ? `<a class="primary-button" href="${mathLearningUrl}" aria-label="필수 수학 학습 페이지로 이동">필수 수학 학습 시작하기 <span aria-hidden="true">↗</span></a>`
         : unit.id === 'base'
-          ? `<a class="primary-button" href="${baseLearningUrl}" target="_blank" rel="noopener noreferrer" aria-label="새 창에서 AI 기초 학습 열기">학습 로드맵 살펴보기 <span aria-hidden="true">↗</span></a>`
+          ? `<a class="primary-button" href="${baseLearningUrl}" aria-label="AI 기초 학습 페이지로 이동">학습 로드맵 살펴보기 <span aria-hidden="true">↗</span></a>`
           : `<a class="primary-button" href="#roadmap" aria-label="학습 로드맵에서 ${name} 영역 살펴보기">로드맵에서 살펴보기 <span aria-hidden="true">↗</span></a>`}
       <div class="hero-footnote"><span class="sparkle" aria-hidden="true">✳</span>${escapeHtml(details.footnote || unit.subtitle)}</div>
     </div>
