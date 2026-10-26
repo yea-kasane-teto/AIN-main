@@ -38,7 +38,8 @@ a { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column; padding: var(--sidebar-top-padding) var(--sidebar-horizontal-padding) 20px;
   background: #fff; border-right: 1px solid var(--line); transition: width .28s ease, padding .28s ease;
 }
-.brand { display: flex; align-items: center; gap: 12px; padding: 0 9px var(--sidebar-brand-bottom-padding); }
+.sidebar-header { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: var(--sidebar-brand-bottom-padding); }
+.brand { min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 9px; }
 .brand img { width: var(--sidebar-logo-width); height: var(--sidebar-logo-height); object-fit: cover; object-position: center; }
 .brand-copy { display: grid; gap: 2px; }
 .brand-copy strong { font: 800 20px Manrope, sans-serif; letter-spacing: -.06em; }
@@ -51,8 +52,14 @@ a { color: inherit; text-decoration: none; }
 }
 .side-link.is-active { background: #eef4ff; color: var(--blue); font-weight: 700; }
 .side-icon { width: var(--sidebar-icon-size); flex: 0 0 var(--sidebar-icon-size); text-align: center; font-size: var(--sidebar-icon-size); }
-.side-toggle { margin-top: 8px; }
-.side-toggle .side-icon { font-size: var(--sidebar-icon-size); }
+.sidebar-toggle-button {
+  width: 36px; height: 36px; flex: 0 0 36px; display: grid; place-items: center;
+  padding: 0; border: 1px solid transparent; border-radius: 9px; background: transparent; color: #7b8798;
+  cursor: pointer; transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.sidebar-toggle-button:hover { border-color: #e2eaf5; background: #f3f6fb; color: var(--blue); }
+.sidebar-toggle-button:focus-visible { outline: 3px solid #8eb5ff; outline-offset: 2px; }
+.sidebar-toggle-button .side-icon { font-size: var(--sidebar-icon-size); line-height: 1; }
 .sidebar-note {
   display: flex; align-items: flex-start; gap: 9px; margin: 18px 5px; padding: 13px 11px;
   border: 1px solid #edf0f5; border-radius: 10px; color: #98a2b1; font-size: 11px; line-height: 1.6;
@@ -62,8 +69,8 @@ a { color: inherit; text-decoration: none; }
 .main-area { min-height: 100vh; display: flex; flex-direction: column; margin-left: var(--sidebar-width); transition: margin-left .28s ease; }
 .sidebar-collapsed .sidebar { width: var(--sidebar-rail-width); align-items: flex-start; padding: var(--sidebar-top-padding) var(--sidebar-horizontal-padding) 20px; }
 .sidebar-collapsed .main-area { margin-left: var(--sidebar-rail-width); }
-.sidebar-collapsed .brand { align-self: stretch; justify-content: center; gap: 0; padding: 0 0 var(--sidebar-brand-bottom-padding); }
-.sidebar-collapsed .brand-copy,
+.sidebar-collapsed .sidebar-header { align-self: stretch; justify-content: center; }
+.sidebar-collapsed .brand { display: none; }
 .sidebar-collapsed .sidebar-note,
 .sidebar-collapsed .sidebar-bottom { display: none; }
 .sidebar-collapsed .sidebar-label { width: 100%; padding-right: 0; padding-left: 0; text-align: center; white-space: nowrap; visibility: hidden; }
@@ -75,7 +82,7 @@ a { color: inherit; text-decoration: none; }
 }
 .sidebar-collapsed .side-link > span:not(.side-icon) { display: none; }
 .sidebar-collapsed .side-icon { font-size: var(--sidebar-icon-size); }
-.sidebar-collapsed .side-toggle { margin: 8px 0 var(--sidebar-link-vertical-gap); margin-left: var(--sidebar-collapse-inset); background: #f3f6fb; color: var(--blue); }
+.sidebar-collapsed .sidebar-toggle-button { background: #f3f6fb; color: var(--blue); }
 .topbar {
   position: sticky; z-index: 4; top: 0; height: 70px; flex: 0 0 70px;
   display: grid; grid-template-columns: 1fr minmax(320px, 600px) 1fr; align-items: center; gap: 20px;
@@ -333,7 +340,9 @@ a { color: inherit; text-decoration: none; }
     --sidebar-link-vertical-gap: clamp(3px, .18vw, 5px);
   }
   .sidebar { padding: var(--sidebar-top-padding) var(--sidebar-horizontal-padding) clamp(20px, 1.15vw, 29px); }
-  .brand { gap: clamp(12px, .7vw, 18px); padding: 0 clamp(9px, .53vw, 14px) var(--sidebar-brand-bottom-padding); }
+  .sidebar-header { margin-bottom: clamp(30px, 1.75vw, 45px); }
+  .brand { gap: clamp(12px, .7vw, 18px); padding: 0 clamp(9px, .53vw, 14px); }
+  .sidebar-toggle-button { width: clamp(36px, 1.7vw, 44px); height: clamp(36px, 1.7vw, 44px); flex-basis: clamp(36px, 1.7vw, 44px); }
   .brand img { width: var(--sidebar-logo-width); height: var(--sidebar-logo-height); }
   .brand-copy strong { font-size: clamp(20px, .8vw, 27px); }
   .brand-copy small { font-size: clamp(11px, .47vw, 14px); }
