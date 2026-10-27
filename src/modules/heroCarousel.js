@@ -65,7 +65,9 @@ function createSlide(unit, index, total) {
       <div class="eyebrow"><span class="eyebrow-mark"></span> AI LEARNING AREA · ${number}</div>
       <h1 id="heroSlideTitle-${escapeHtml(unit.id)}">${name}</h1>
       <p class="hero-description">${escapeHtml(details.description || unit.description)}</p>
-      ${unit.id === 'math'
+      ${unit.id === 'ml'
+        ? `<a class="primary-button" href="https://yea-kasane-teto.github.io/AIN-sanghyo/?module=ml" aria-label="머신러닝 학습 페이지로 이동">머신러닝 학습 시작하기 <span aria-hidden="true">↗</span></a>`
+        : unit.id === 'math'
         ? `<a class="primary-button" href="${mathLearningUrl}" aria-label="필수 수학 학습 페이지로 이동">필수 수학 학습 시작하기 <span aria-hidden="true">↗</span></a>`
         : unit.id === 'base'
           ? `<a class="primary-button" href="${baseLearningUrl}" aria-label="AI 기초 학습 페이지로 이동">학습 로드맵 살펴보기 <span aria-hidden="true">↗</span></a>`
