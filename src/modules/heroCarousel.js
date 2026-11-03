@@ -59,7 +59,8 @@ function createSlide(unit, index, total) {
   slide.setAttribute('role', 'group');
   slide.setAttribute('aria-roledescription', '슬라이드');
   slide.setAttribute('aria-label', `${index + 1} / ${total}: ${unit.name}`);
-  slide.hidden = index !== 0;
+  slide.setAttribute('aria-hidden', String(index !== 0));
+  slide.inert = index !== 0;
   slide.innerHTML = `
     <div class="hero-copy">
       <div class="eyebrow"><span class="eyebrow-mark"></span> AI LEARNING AREA · ${number}</div>
@@ -130,16 +131,37 @@ function initHeroCarousel() {
   let activeIndex = 0;
   let isPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let timerId = null;
+  let slideAnimations = [];
 
-  function showSlide(index) {
+  function showSlide(index, direction = Math.sign(index - activeIndex)) {
+    const previousIndex = activeIndex;
     activeIndex = (index + units.length) % units.length;
+    slideAnimations.forEach((animation) => animation.cancel());
+    slideAnimations = [];
     slides.forEach((slide, slideIndex) => {
       const isActive = slideIndex === activeIndex;
-      slide.hidden = !isActive;
+      slide.classList.remove('is-leaving');
       slide.setAttribute('aria-hidden', String(!isActive));
+      slide.inert = !isActive;
     });
+    if (previousIndex !== activeIndex && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const outgoing = slides[previousIndex];
+      const incoming = slides[activeIndex];
+      outgoing.classList.add('is-leaving');
+      const options = { duration: 650, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' };
+      const outgoingAnimation = outgoing.animate([
+        { transform: 'translateX(0)' },
+        { transform: 'translateX(' + (-direction * 100) + '%)' },
+      ], options);
+      const incomingAnimation = incoming.animate([
+        { transform: 'translateX(' + (direction * 100) + '%)' },
+        { transform: 'translateX(0)' },
+      ], options);
+      slideAnimations = [outgoingAnimation, incomingAnimation];
+      outgoingAnimation.onfinish = () => outgoing.classList.remove('is-leaving');
+    }
     dots.forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === activeIndex)));
-    slideCount.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(units.length).padStart(2, '0')}`;
+    slideCount.textContent = String(activeIndex + 1).padStart(2, '0') + ' / ' + String(units.length).padStart(2, '0');
   }
 
   function stopAutoplay() {
