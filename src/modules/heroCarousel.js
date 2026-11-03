@@ -129,7 +129,6 @@ function initHeroCarousel() {
   pagination.replaceChildren(...dots);
 
   let activeIndex = 0;
-  let isPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let timerId = null;
   let slideAnimations = [];
 
@@ -144,7 +143,7 @@ function initHeroCarousel() {
       slide.setAttribute('aria-hidden', String(!isActive));
       slide.inert = !isActive;
     });
-    if (previousIndex !== activeIndex && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (previousIndex !== activeIndex) {
       const outgoing = slides[previousIndex];
       const incoming = slides[activeIndex];
       outgoing.classList.add('is-leaving');
@@ -172,7 +171,7 @@ function initHeroCarousel() {
   function startAutoplay() {
     stopAutoplay();
     const focusInside = carousel.contains(document.activeElement);
-    if (isPaused || document.hidden || carousel.matches(':hover') || focusInside) return;
+    if (document.hidden || carousel.matches(':hover') || focusInside) return;
     timerId = window.setInterval(() => showSlide(activeIndex + 1), 7000);
   }
 
